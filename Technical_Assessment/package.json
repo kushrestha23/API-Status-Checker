@@ -1,0 +1,27 @@
+{
+  "name": "qa-engineer-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "Kusumakar Shrestha",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "axios": "^1.3.4",
+    "chai-http": "^4.3.0",
+    "cypress": "^12.8.1",
+    "node-fetch": "^3.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chromedriver": "^111.0.0",
+    "cucumber": "^6.0.7",
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.8.1"
+  }
+}
