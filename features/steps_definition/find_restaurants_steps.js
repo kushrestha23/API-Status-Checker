@@ -8,6 +8,12 @@ Given('I want food in {string}', async function (string) {
   // Navigate to the SkipTheDishes website and enter the address in the search bar
   await driver.get('https://www.skipthedishes.com/');
 
+  const AcceptCookie = await driver.findElement({
+    xpath:
+    '/html/body/div[2]/div[1]/div/div/div[2]/div/div/div[3]/button[3]'
+  });
+  await AcceptCookie.click();
+
   const searchBox = await driver.findElement({
     xpath:
       '//*[@id="root"]/div/main/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[1]/div[2]/form/input',
@@ -34,7 +40,7 @@ When('I search for restaurants', async function () {
   const searchBox = await driver.wait(
     until.elementLocated({
       xpath:
-        '//*[@id="root"]/div/main/div/div/div[2]/div[1]/div/div/div/div/div[4]/button',
+        '/html/body/div[2]/div/main/div/div/div[2]/div[1]/div/div/div/div/div[4]/button'
     }),
     10000
   );
@@ -50,8 +56,9 @@ Then('I should see some restaurants in {string}', async function (address) {
   );
 
   const results = await resturantCard.findElements({
-    tagName: 'li',
+    xpath: '/html/body/div[2]/div/main/div/div/div/div/div[9]/div[2]',
   });
 
-  expect(results.length).to.be.greaterThan(0);
+  expect(results.length, `Expected more than 0 restaurants, but found ${results.length}`).to.be.greaterThan(0);
 });
+
