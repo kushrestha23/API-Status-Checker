@@ -9,5 +9,3 @@ Feature: Use the website to find restaurants
     When I search for restaurants
     Then I should see some restaurants in "136 Market Avenue, Winnipeg, MB, Canada"
     When I click on the first restaurant in the list "restaurants near me"
-
-

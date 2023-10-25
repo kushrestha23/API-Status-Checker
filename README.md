@@ -30,7 +30,7 @@ npm install
 npx mocha Rest-API-TEST.js
 ```
 
-##### To run the cucumbe scenario test, use the following command
+##### To run the cucumber scenario test, use the following command
 
 #
 
