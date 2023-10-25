@@ -58,7 +58,21 @@ Then('I should see some restaurants in {string}', async function (address) {
   const results = await resturantCard.findElements({
     xpath: '/html/body/div[2]/div/main/div/div/div/div/div[9]/div[2]',
   });
-
+  
   expect(results.length, `Expected more than 0 restaurants, but found ${results.length}`).to.be.greaterThan(0);
 });
 
+When('I click on the first restaurant in the list "restaurants near me"', async function () {
+  const restaurantCard = await driver.wait(
+    until.elementLocated({
+      xpath: '/html/body/div[2]/div/main/div/div/div/div/div[6]/div[2]',
+    }),
+    10000
+  );
+
+  const results = await restaurantCard.findElements({
+    xpath: '/html/body/div[2]/div/main/div/div/div/div/div[9]/div[2]',
+  });
+
+  await results[0].click();
+});
